@@ -1,0 +1,72 @@
+<!doctype html>
+<html>
+
+<head>
+    <style>
+        div {
+            height: 50px;
+            width: 50px;
+            background-color: rgb(36, 255, 7);
+            position: absolute;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div id="mom"></div>
+</body>
+
+</html>
+<script>
+    var box = document.getElementById("mom")
+    box.addEventListener("click", boxclick)
+    var speedx = 5
+    var x = 0
+    var y = 0
+    var speedy = 5
+
+    setInterval(update, 50)
+    function update() {
+        box.style.left = x + "px"
+        box.style.top = y + "px"
+        x = x + speedx
+        y = y + speedy
+        if (x > 300) {
+
+            speedx = speedx * -1
+        }
+        if (x < 0) {
+            speedx = speedx * -1
+
+        }
+        if (y < 0) {
+            speedy = speedy * -1
+
+        }
+        if (y > 350) {
+            speedy = speedy * -1
+
+        }
+
+    }
+
+    function boxclick() {
+        if (speedx > 0) {
+            speedx = speedx + 5
+        }
+        if (speedx < 0) {
+            speedx = speedx - 5
+        }
+        if (speedy > 0) {
+            speedy = speedy + 5
+        }
+        if (speedy < 0) {
+            speedy = speedy - 5
+        }
+    }
+
+
+
+
+</script>
