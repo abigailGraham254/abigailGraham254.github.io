@@ -25,7 +25,10 @@
     <p id="score"> SCORE=0</p>
     <img id="upgrade"
         src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSGdoYOtj_GYJW8U7w9N63nh49dFYdDgBvbLw&usqp=CAU">
-</body>
+    <img id="upgrade2"
+        src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/31/Button_Icon_Green.svg/1200px-Button_Icon_Green.svg.png"
+        </body>
+
 
 
 
@@ -33,6 +36,7 @@
 <script>
     document.getElementById("image").addEventListener("click", imageclick)
     document.getElementById("upgrade").addEventListener("click", upgrade)
+    document.getElementById("upgrade2").addEventListener("click", upgrade2)
     var score = 0
     function imageclick() {
         score = score + 1
@@ -44,6 +48,7 @@
     function upgrade() {
         if (score >= 5) {
             setInterval(multiplier, 500)
+            score = score - 5
         }
     }
 
@@ -52,7 +57,11 @@
         document.getElementById("score").innerText = "score=" + score
 
     }
-
+    function upgrade2() {
+        if (score >= 10)
+            setInterval(multiplier, 50)
+        score = score - 10
+    }
 
 
 
